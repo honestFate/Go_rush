@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "./";
+
+service RandomSignaler {
+    rpc RandSignal(RandSignalRequest) returns (stream RandSignalResponse) {}
+}
+
+message RandSignalRequest {}
+
+message RandSignalResponse {
+    string session_id = 1;
+    double frequency = 2;
+    string current_timestamp = 3;
+}
